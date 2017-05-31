@@ -58,7 +58,7 @@ class VKBotRequestController {
 $data = json_decode(file_get_contents('php://input'));
 // $data = $_GET;
 if ($data) {
-  $bot = new VKBotRequestController($data, 'CONFIRMATION_TOKEN', 'ACCESS_TOKEN');
+  $bot = new VKBotRequestController($data, '6fef10a5', 'dc102d4c63f9a4ff49c849ed1200a4cdf365e1c6489a2ced96a03d7cfb1c631d06e174085f48a90d8a04e');
   $bot->run();
 }
 
