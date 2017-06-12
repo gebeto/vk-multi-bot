@@ -15,9 +15,11 @@ class Confirmation {
 
 	public function start() {
 		echo $this->conf_token;
+		exit();
 	}
 }
 
-array_push($plugins, new Confirmation($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
+// array_push($plugins, new Confirmation($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
+PluginManager::registerPlugin(new Confirmation($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 
 ?>

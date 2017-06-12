@@ -34,6 +34,6 @@ class HelloWorldPlugin {
 
 }
 
-array_push($plugins, new HelloWorldPlugin($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
+PluginManager::registerPlugin(new HelloWorldPlugin($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 
 ?>
