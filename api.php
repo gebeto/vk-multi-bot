@@ -15,27 +15,27 @@ switch ($REQ->type) {
 	
 	// ADD case
 	case 'add':
-		include 'methods/add_.php';
+		include_once 'methods/add_.php';
 		break;
 	
 	// GET case
 	case 'get':
-		include 'methods/get_.php';
+		include_once 'methods/get_.php';
 		break;
 		
 	// DELETE case
 	case 'delete':
-		include 'methods/delete_.php';
+		include_once 'methods/delete_.php';
 		break;
 
 	// AUTH case
 	case 'auth':
-		include 'methods/login_.php';
+		include_once 'methods/login_.php';
 		break;
 
 	// BOT case
 	case 'bot':
-		include 'methods/bot_.php';
+		include_once 'methods/bot_.php';
 		break;
 	
 	// DEFAULT case
