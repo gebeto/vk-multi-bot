@@ -1,7 +1,7 @@
 <?php
 
 
-class HelloWorldPlugin {
+class HelloWorldPostPlugin {
 
   private $access_token;
   private $data;
@@ -14,8 +14,8 @@ class HelloWorldPlugin {
 
   public function generateMessage() {
     $request_params = array(
-      'message' => "Йоу! Hello world!",
-      'user_id' => $this->data->object->user_id,
+      'message' => "Ты создал пост \"{$this->data->object->text}\"",
+      'user_id' => $this->data->object->from_id,
       'access_token' => $this->access_token, 
       'v' => '5.64' 
     );
@@ -34,7 +34,7 @@ class HelloWorldPlugin {
 
 }
 
-PluginManager::registerPlugin(new HelloWorldPlugin($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
+PluginManager::registerPlugin(new HelloWorldPostPlugin($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 
 // wall_post_new
 

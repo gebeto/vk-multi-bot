@@ -19,7 +19,6 @@ class Confirmation {
 	}
 }
 
-// array_push($plugins, new Confirmation($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 PluginManager::registerPlugin(new Confirmation($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 
 ?>
