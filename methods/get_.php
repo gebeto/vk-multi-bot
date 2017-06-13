@@ -31,6 +31,8 @@ switch ($REQ->method) {
 	case 'bot_state':
 		get_bot_state();
 		break;
+	default:
+		echo 'error';
 }
 
 ?>
