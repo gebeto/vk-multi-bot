@@ -12,6 +12,7 @@ class HelloWorldPlugin {
     $this->data = $data;
   }
 
+
   public function generateMessage() {
     $request_params = array(
       'message' => "Йоу! Hello world!",
@@ -23,20 +24,16 @@ class HelloWorldPlugin {
     return $get_params;
   }
 
-  public function sendMessage() {
-    $response = file_get_contents('https://api.vk.com/method/messages.send?' . $this->generateMessage()); 
-    return $response;
-  }
 
   public function start() {
-    $this->sendMessage();
+    file_get_contents('https://api.vk.com/method/messages.send?' . $this->generateMessage()); 
   }
 
 }
 
+
 PluginManager::registerPlugin(new HelloWorldPlugin($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN));
 
-// wall_post_new
 
 ?>
 

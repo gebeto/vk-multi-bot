@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include_once 'libs/TelegramBot.php';
+include_once 'libs/DBTable.php';
 
 $CONFIRMATION_TOKEN = '6fef10a5';
 $ACCESS_TOKEN = 'dc102d4c63f9a4ff49c849ed1200a4cdf365e1c6489a2ced96a03d7cfb1c631d06e174085f48a90d8a04e';
@@ -40,8 +41,16 @@ class PluginManager {
 
 }
 
-PluginManager::runPlugins($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN);
+if ($VK_CALLBACK) {
+	PluginManager::runPlugins($VK_CALLBACK, $CONFIRMATION_TOKEN, $ACCESS_TOKEN);
 
-echo 'ok';
+	echo 'ok';
+} else {
+	$plugins = glob("plugins/*.php");
+	foreach ($plugins as $key => $value) {
+		$key += 1;
+		echo "<p>{$key}: {$value}</p>";
+	}
+}
 
 ?>

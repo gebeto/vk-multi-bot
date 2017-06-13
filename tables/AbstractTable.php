@@ -11,7 +11,7 @@ abstract class AbstractTable {
 	public $mysqli;
 
 	public function __construct($name) {
-		$this->mysqli = new mysqli("SERVER", "USERNAME", "PASSWORD", "DBNAME");
+		$this->mysqli = new mysqli("localhost", "c97006xu_1", "c97006xu_1", "c97006xu_1");
 		if ($this->mysqli->connect_errno) {
 			echo '{"error": "' . $this->mysqli->connect_error . '"}';
 			exit();
