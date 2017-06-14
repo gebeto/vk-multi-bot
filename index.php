@@ -53,4 +53,11 @@ if ($VK_CALLBACK) {
 	}
 }
 
+$host = $_SERVER['HTTP_HOST'];
+$path = $_SERVER['REQUEST_URI'];
+$generator_url = "http://{$host}{$path}libs/ImageCreator.php?text=Slavik%20Nychkalo";
+echo '<img src="data:image/png;base64,';
+echo base64_encode(file_get_contents($generator_url));
+echo '" alt="">';
+
 ?>
